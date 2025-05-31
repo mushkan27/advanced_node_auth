@@ -1,4 +1,10 @@
 
+
+//Route test
+const test = (req, res, next) => {
+    res.send('Auth Route Works')
+}
+
 // Register Function
 const register = (req, res, next) => {
     res.send('Register Route');
@@ -23,5 +29,5 @@ module.exports = {
     register,
     login,
     forgotpassword,
-    resetpassword
+    resetpassword, test
 };

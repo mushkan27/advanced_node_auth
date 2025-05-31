@@ -8,16 +8,18 @@ const router = express.Router();
 */
 
 //Import controller functions
-const { register, login, forgotpassword, resetpassword } = require('../controllers/auths');
+const { register, login, forgotpassword, resetpassword, test } = require('../controllers/auths');
 
 //Define routes
+router.route('/test').get(test)
+  
 router.route('/register').post(register);
 
 router.route('/login').post(login);
 
 router.route('/forgotpassword').post(forgotpassword);
 
-router.route('/resetpassword/:resetToken').post(resetpassword);
+router.route('/resetpassword/:resetToken').put(resetpassword);
 
 //Export the router
 module.exports = router
